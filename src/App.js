@@ -2,7 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
-import About from "./components/About";
+// import About from "./components/About";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ function App() {
     document.body.classList.add("bg-"+cls)
     if (mode === "light") {
       setmode("dark");
-      document.body.style.backgroundColor = "grey";
+      document.body.style.backgroundColor = "black";
     } else {
       setmode("light");
       document.body.style.backgroundColor = "white";
@@ -33,11 +33,11 @@ function App() {
       <Router>
       <Navbar title="Text Utilities" mode={mode} toggle={toggleMode} />
         <Routes>
-          <Route path="/About" element={<About/>} />
+          {/* <Route path="/About" element={<About/>} /> */}
           <Route
             path="/"
             element={
-              <TextForm heading="Enter the text to analyze" mode={mode} />
+              <TextForm mode={mode} />
             }
           />
         </Routes>

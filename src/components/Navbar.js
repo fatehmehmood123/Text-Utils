@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <nav
-      className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}
+      className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`} 
     >
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
@@ -23,7 +23,7 @@ export default function Navbar(props) {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 {" "}
                 Home
@@ -34,21 +34,22 @@ export default function Navbar(props) {
                 {" "}
                 About 
               </Link>
-            </li>
+            </li> */}
           </ul>
-          <div className="d-flex">
+          {/* <div className="d-flex">
             <div className="bg-primary rounded mx-2" onClick={()=>{props.toggle("primary")}} style={{height:"30px",width:"30px",cursor:"pointer"}}></div>
             <div className="bg-success rounded mx-2" onClick={()=>{props.toggle("success")}} style={{height:"30px",width:"30px",cursor:"pointer"}}></div>
             <div className="bg-danger rounded mx-2" onClick={()=>{props.toggle("danger")}} style={{height:"30px",width:"30px",cursor:"pointer"}}></div>
             <div className="bg-warning rounded mx-2" onClick={()=>{props.toggle("warning")}} style={{height:"30px",width:"30px",cursor:"pointer"}}></div>
-          </div>
+          </div> */}
+         
           <div
-            className={`form-check form-switch text-${
+            className={`d-flex form-check form-switch text-${
               props.mode === "light" ? "dark" : "light"
             } `}
           >
-            <input
-              className="form-check-input "
+            <input 
+              className="form-check-input mx-2"
               type="checkbox"
               role="switch"
               id="flexSwitchCheckDefault"

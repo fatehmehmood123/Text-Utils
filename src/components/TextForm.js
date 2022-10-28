@@ -29,34 +29,40 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container my-4">
-        <h1>{props.heading}</h1>
+        <h1 className= {`text-${
+              props.mode === "light" ? "dark" : "light"
+            } `}>Enter the text to analyze</h1>
         <div className="form-floating">
           <textarea
-            className="form-control my-3"
+            className= {`form-control my-3 text-${
+              props.mode === "light" ? "dark" : "light"
+            } `}
             onChange={handleOnChange}
             value={text}
             id="textArea"
-            style={{ backgroundColor: props.mode === "light" ? "white" : "grey"}}
+            style={{ backgroundColor: props.mode === "light" ? "white" : "black"}}
           ></textarea>
         </div>
-        <button  disabled={text.length===0} className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button  disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert To Upper case 
         </button> 
-        <button  disabled={text.length===0} className="btn btn-primary mx-2" onClick={handleloClick}>
+        <button  disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleloClick}>
           Convert To lower case 
         </button> 
-        <button disabled={text.length===0}  className="btn btn-primary mx-2" onClick={clearText}>
+        <button disabled={text.length===0}  className="btn btn-primary mx-2 my-1" onClick={clearText}>
           Clear Text 
         </button> 
-        <button  disabled={text.length===0} className="btn btn-primary mx-2" onClick={textCopy}>
+        <button  disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={textCopy}>
           Copy Text 
         </button> 
-        <button  disabled={text.length===0} className="btn btn-primary mx-2" onClick={handleExtraSpaces}>
+        <button  disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>
           Remove extra spaces
         </button>
       </div>
-      <div className="container my-3">
-        <h1>Your Text Summary</h1>
+      <div  className= {`container my-3 text-${
+              props.mode === "light" ? "dark" : "light"
+            } `}>
+        <h1 >Your Text Summary</h1>
         <p>
           {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters
         </p>
